@@ -65,7 +65,7 @@ const Buttons = styled.div`
 		border-radius: 7px;
 		border: none;
 		margin-left: 9px;
-		background-color: #8989ff;
+		background-color: #dddddd;
 
 		transition: .2s;
 		&:hover{

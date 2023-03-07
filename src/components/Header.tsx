@@ -1,18 +1,13 @@
 import styled from "styled-components"
-import React from "react"
-//import { useNavigate } from 'react-router-dom';
 
 export default function Header(){
-
-	//const nav = useNavigate();
-
-	// function functy(){
-	// 	nav('https://github.com/gsdutra/text-encrypter-for-notion')
-	//}
 	return(
 		<HeaderStyled>
 			<Name>
-				Text Encrypter for Notion
+				<a href="https://github.com/gsdutra/text-encrypter-for-notion"
+				target="blank">
+					Text Encrypter for Notion
+				</a>
 			</Name>
 		</HeaderStyled>
 	)
@@ -34,4 +29,7 @@ const Name = styled.h1`
 	@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 	font-family: 'Secular One';
 	cursor: hover;
+	a{
+		text-decoration: none;
+	}
 `

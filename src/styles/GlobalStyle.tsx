@@ -52,7 +52,8 @@ const GlobalStyle = createGlobalStyle`
     transition: all ease .2s;
     }
     body {
-    font-family: 'Arvo', serif;
+    font-family: 'Arial', serif;
+    font-size: 17px;
     background-color: #E5E5E5;
     }
     a{

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import GlobalStyle from './styles/GlobalStyle';
 
@@ -8,18 +8,23 @@ import TextInput from './components/TextInput';
 import Output from './components/Output';
 
 function App() {
+
+	const [password, setPassword] = useState<string>("");
+	const [text, setText] = useState<string>("");
+
 	return (
 		<Content>
 			<GlobalStyle/>
 			<Header/>
 			<BodyStyled>
-				<Password/>
-				<TextInput/>
-				<Output/>
+				<Password password={password} setPassword={setPassword}/>
+				<TextInput text={text} setText={setText}/>
+				<Output text={text} password={password}/>
 			</BodyStyled>
 		</Content>
 	);
 }
+
 const Content = styled.div`
 	width: 100%;
 	height: 100vh;

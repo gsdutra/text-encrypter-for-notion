@@ -1,23 +1,47 @@
-import styled from 'styled-components'
+import React, {useState} from 'react';
+import styled from 'styled-components';
+import AES from 'crypto-js/aes';
+import CryptoJS from 'crypto-js';
 
-export default function Password(){
+interface Props {
+	text: string;
+	password: string;
+}
+
+const Output: React.FC<Props> = ({text, password}) => {
+
+	const [outputText, setOutText] = useState<string>("");
+
+	function encryptText(): void{
+		const encryptedText = AES.encrypt(text, password).toString();
+        setOutText(encryptedText);
+	}
+
+	function decryptText(): void{
+		const decryptedText = AES.decrypt(outputText, password).toString(CryptoJS.enc.Utf8);
+        setOutText(decryptedText);
+	}
+
 	return(
 		<OutputStyle>
 			<Flex>
 			<a>Output:</a>
 			<Buttons>
-				<button>Copy Output</button>
-				<button>Encrypt</button>
-                <button>Decrypt</button>
+				<button onClick={() => {navigator.clipboard.writeText(outputText)}}>Copy Output</button>
+				<button onClick={encryptText}>Encrypt</button>
+                <button onClick={decryptText}>Decrypt</button>
 			</Buttons>
 			</Flex>
-			<Output><a></a></Output>
+			<OutputStyled><a>{outputText}</a></OutputStyled>
 		</OutputStyle>
 	)
 }
 
-const Output = styled.div`
+export default Output;
+
+const OutputStyled = styled.div`
 	margin-top: 12px;
+	overflow-wrap: break-word;
 `
 
 const OutputStyle = styled.div`
@@ -41,5 +65,13 @@ const Buttons = styled.div`
 		border-radius: 7px;
 		border: none;
 		margin-left: 9px;
+		background-color: #8989ff;
+
+		transition: .2s;
+		&:hover{
+			transform: scale(1.05);
+			transition: .2s;
+			cursor: pointer;
+		}
 	}
 `

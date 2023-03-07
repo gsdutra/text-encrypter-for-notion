@@ -55,6 +55,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Arvo', serif;
     background-color: #E5E5E5;
     }
+    a{
+		color: #d4d4d4;
+		margin-bottom: 3px;
+	}
 `
 
 export default GlobalStyle;

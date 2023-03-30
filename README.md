@@ -7,7 +7,7 @@ The usage is really simple and it's shown in the following gif:
 ![](https://s2.gifyu.com/images/demonstration.gif)
 
 
-To use it in Notion (by the way, you can use it in any other application) just type /embed and paste the [link to the deploy ](text-encrypter-for-notion.vercel.app) (text-encrypter-for-notion.vercel.app).
+To use it in Notion (by the way, you can use it in any other application) just type /embed and paste the [link to the deploy ](https://text-encrypter-for-notion.vercel.app/).
 
 <br/>
 

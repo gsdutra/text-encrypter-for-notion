@@ -14,3 +14,4 @@ To use it in Notion (by the way, you can use it in any other application) just t
 ## Safety
 
 This app uses AES (Advanced Encryption Standard) with crypto-js library.
+As you can see in the source code, there's no API connection, therefore no data is sent to any server, so you don't need to worry about it.
